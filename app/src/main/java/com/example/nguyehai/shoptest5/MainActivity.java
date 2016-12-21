@@ -6,7 +6,7 @@ package com.example.nguyehai.shoptest5;
         import android.widget.TabHost;
 
 public class MainActivity extends TabActivity {
-
+// test 6
     // test 3
     //im using this one from mini
     // test project from mmain pc
