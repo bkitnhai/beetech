@@ -9,7 +9,7 @@ public class MainActivity extends TabActivity {
 
     // test 3
     //im using this one from mini
-    // test project from mini
+    // test project from mini 2
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
