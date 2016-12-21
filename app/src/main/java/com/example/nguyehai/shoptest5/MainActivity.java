@@ -8,7 +8,7 @@ package com.example.nguyehai.shoptest5;
 public class MainActivity extends TabActivity {
 
     // test 3
-    //daf
+    //this is from main pc
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
