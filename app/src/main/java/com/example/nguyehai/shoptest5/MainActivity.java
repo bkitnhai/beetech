@@ -6,6 +6,8 @@ package com.example.nguyehai.shoptest5;
         import android.widget.TabHost;
 
 public class MainActivity extends TabActivity {
+
+    // test
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
