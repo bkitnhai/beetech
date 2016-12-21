@@ -8,7 +8,7 @@ package com.example.nguyehai.shoptest5;
 public class MainActivity extends TabActivity {
 
     // test 3
-    //this is from main pc daffasdf
+    //im using this one from mini
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
