@@ -1,4 +1,4 @@
-package com.example.nguyehai.shoptest5;
+package com.example.nguyehai.shoptest5.datas;
 
 /**
  * Created by nguyehai on 12/20/2016.

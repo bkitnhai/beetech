@@ -28,13 +28,13 @@ public class MainActivity extends TabActivity {
         // Tab for Songs
         TabHost.TabSpec All_Products = tabHost.newTabSpec("All Products");
         All_Products.setIndicator("All Products", getResources().getDrawable(R.drawable.testicon));
-        Intent All_ProductsIntent = new Intent(this, All_Products.class);
+        Intent All_ProductsIntent = new Intent(this, com.example.nguyehai.shoptest5.all.products.All_Products.class);
         All_Products.setContent(All_ProductsIntent);
 
         // Tab for Videos
         TabHost.TabSpec Carts = tabHost.newTabSpec("Carts");
         Carts.setIndicator("Carts", getResources().getDrawable(R.drawable.testicon));
-        Intent CartssIntent = new Intent(this, Carts.class);
+        Intent CartssIntent = new Intent(this, com.example.nguyehai.shoptest5.carts.Carts.class);
         Carts.setContent(CartssIntent);
 
         // Adding all TabSpec to TabHost

@@ -4,7 +4,6 @@
     android:id="@+id/activity_carts"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context="com.example.nguyehai.shoptest5.Carts">
+    tools:context="com.example.nguyehai.shoptest5.carts.Carts">
 
 </RelativeLayout>
