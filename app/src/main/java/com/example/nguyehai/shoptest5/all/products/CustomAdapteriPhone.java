@@ -12,8 +12,8 @@ import com.example.nguyehai.shoptest5.datas.DataPhone;
 
 import java.util.ArrayList;
 
-public class CustomUsersAdapter extends ArrayAdapter<DataPhone> {
-    public CustomUsersAdapter(Context context, ArrayList<DataPhone> dataForiPhones) {
+public class CustomAdapteriPhone extends ArrayAdapter<DataPhone> {
+    public CustomAdapteriPhone(Context context, ArrayList<DataPhone> dataForiPhones) {
         super(context, 0, dataForiPhones);
      }
 
