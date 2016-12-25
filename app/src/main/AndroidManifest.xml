@@ -23,7 +23,8 @@
             android:name=".all.products.All_Products"
             android:label="@string/title_activity_songs" />
         <activity android:name=".carts.Carts" />
-        <activity android:name=".all.products.All_Products_Phone7"></activity>
+        <activity android:name=".all.products.All_Products_Phone7" />
+        <activity android:name=".all.products.iPhone7_Detail"></activity>
     </application>
 
 </manifest>

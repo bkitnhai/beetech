@@ -17,21 +17,23 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class All_Products_Phone7 extends AppCompatActivity {
+public class iPhone7_Detail extends AppCompatActivity {
+
+    String value_from_All_Products_iPhone7 = null;
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
     JSONArray json;
-    String value_from_All_Products = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_list);
         Intent intent = getIntent();
-        value_from_All_Products = intent.getStringExtra("Name"); //if it's a string you stored.
-        // Loading products in Background Thread
+        value_from_All_Products_iPhone7 = intent.getStringExtra("Model"); //if it's a string you stored.
+        _("value_from_All_Products_iPhone7"+value_from_All_Products_iPhone7);
         new LoadAllProducts().execute();
     }
     class LoadAllProducts extends AsyncTask<String, String, String> {
@@ -51,9 +53,9 @@ public class All_Products_Phone7 extends AppCompatActivity {
         protected String doInBackground(String... args) {
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("Name",value_from_All_Products));
+            params.add(new BasicNameValuePair("Model",value_from_All_Products_iPhone7));
             // getting JSON string from URL
-            json = jParser.makeHttpRequest("http://www.oslophone.com/server/BranchProducts.php", "GET", params);
+            json = jParser.makeHttpRequest("http://www.oslophone.com/server/service.php", "GET", params);
             return null;
         }
 
@@ -81,38 +83,16 @@ public class All_Products_Phone7 extends AppCompatActivity {
         ArrayList<DataPhone> arrayOfDataForiPhones =  new ArrayList<DataPhone>(); //DataPhone.getUsers();
         for (int i = 0; i < json.length(); i++) {
             try {
-                arrayOfDataForiPhones.add(new DataPhone(json.getJSONObject(i).getString("Model")));
+                arrayOfDataForiPhones.add(new DataPhone(json.getJSONObject(i).getString("Name"),json.getJSONObject(i).getString("Color"),json.getJSONObject(i).getString("Size"),json.getJSONObject(i).getString("Model"),json.getJSONObject(i).getString("Price"),json.getJSONObject(i).getString("Condition"),json.getJSONObject(i).getString("Description"),json.getJSONObject(i).getString("imageLink")));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
         // Create the adapter to convert the array to views
-        _("arrayOfDataForiPhones"+arrayOfDataForiPhones);
-        CustomAdapteriPhone adapter = new CustomAdapteriPhone(this, arrayOfDataForiPhones);
-        _("adapter"+adapter);
+        CustomAdapteriPhone_Detail adapter = new CustomAdapteriPhone_Detail(this, arrayOfDataForiPhones);
         // Attach the adapter to a ListView
         final ListView listView = (ListView) findViewById(R.id.lvUsers);
         listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            @Override
-            public void onItemClick(AdapterView<?> adapter, View v, int position,
-                                    long arg3)
-            {
-
-                String value2= null;
-                try {
-                    value2 = json.getJSONObject(position).getString("Model");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                _(value2);
-                Intent myIntent = new Intent(All_Products_Phone7.this, iPhone7_Detail.class);
-                myIntent.putExtra("Model", value2); //Optional parameters
-                All_Products_Phone7.this.startActivity(myIntent);
-            }
-        });
     }
 
     public void _(String s){
