@@ -114,7 +114,8 @@
 
     </LinearLayout>
 
-    <ImageView
+    <!-- Thumbnail Image -->
+    <com.android.volley.toolbox.NetworkImageView
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:id="@+id/ivUserIcon"

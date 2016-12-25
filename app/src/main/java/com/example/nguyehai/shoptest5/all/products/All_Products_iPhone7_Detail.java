@@ -1,5 +1,6 @@
 package com.example.nguyehai.shoptest5.all.products;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -21,12 +22,14 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class iPhone7_Detail extends AppCompatActivity {
+public class All_Products_iPhone7_Detail extends AppCompatActivity {
 
     String value_from_All_Products_iPhone7 = null;
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
     JSONArray json;
+    private ProgressDialog pDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +47,11 @@ public class iPhone7_Detail extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
+            /*pDialog = new ProgressDialog(All_Products_iPhone7_Detail.this);
+            pDialog.setMessage("Loading products. Please wait...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();*/
         }
 
         /**
@@ -63,8 +70,8 @@ public class iPhone7_Detail extends AppCompatActivity {
          * After completing background task Dismiss the progress dialog
          * **/
         protected void onPostExecute(String file_url) {
-
-
+            // dismiss the dialog after getting all products
+          //  pDialog.dismiss();
             // updating UI from Background Thread
             runOnUiThread(new Runnable() {
                 public void run() {
@@ -93,6 +100,7 @@ public class iPhone7_Detail extends AppCompatActivity {
         // Attach the adapter to a ListView
         final ListView listView = (ListView) findViewById(R.id.lvUsers);
         listView.setAdapter(adapter);
+
     }
 
     public void _(String s){

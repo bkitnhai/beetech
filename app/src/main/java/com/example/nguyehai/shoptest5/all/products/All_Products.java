@@ -18,11 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
-
-import static android.R.attr.value;
 
 public class All_Products extends AppCompatActivity {
     // Creating JSON Parser object
@@ -68,7 +64,7 @@ public class All_Products extends AppCompatActivity {
                } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Intent myIntent = new Intent(All_Products.this, All_Products_Phone7.class);
+                Intent myIntent = new Intent(All_Products.this, All_Products_iPhone7.class);
                 myIntent.putExtra("Name", value2); //Optional parameters
                 All_Products.this.startActivity(myIntent);
             }

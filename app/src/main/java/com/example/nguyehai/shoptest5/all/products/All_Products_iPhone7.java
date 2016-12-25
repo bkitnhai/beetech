@@ -20,7 +20,7 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class All_Products_Phone7 extends AppCompatActivity {
+public class All_Products_iPhone7 extends AppCompatActivity {
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
     JSONArray json;
@@ -108,9 +108,9 @@ public class All_Products_Phone7 extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 _(value2);
-                Intent myIntent = new Intent(All_Products_Phone7.this, iPhone7_Detail.class);
+                Intent myIntent = new Intent(All_Products_iPhone7.this, All_Products_iPhone7_Detail.class);
                 myIntent.putExtra("Model", value2); //Optional parameters
-                All_Products_Phone7.this.startActivity(myIntent);
+                All_Products_iPhone7.this.startActivity(myIntent);
             }
         });
     }

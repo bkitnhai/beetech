@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".all.products.backEndOfAllPhones.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,8 +24,8 @@
             android:name=".all.products.All_Products"
             android:label="@string/title_activity_songs" />
         <activity android:name=".carts.Carts" />
-        <activity android:name=".all.products.All_Products_Phone7" />
-        <activity android:name=".all.products.iPhone7_Detail"></activity>
+        <activity android:name=".all.products.All_Products_iPhone7" />
+        <activity android:name=".all.products.All_Products_iPhone7_Detail"></activity>
     </application>
 
 </manifest>
