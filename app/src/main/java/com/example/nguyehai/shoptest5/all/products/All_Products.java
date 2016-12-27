@@ -29,7 +29,7 @@ public class All_Products extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_list);
+        setContentView(R.layout.activity_all_products);
 
         // Loading products in Background Thread
         new LoadAllProducts().execute();

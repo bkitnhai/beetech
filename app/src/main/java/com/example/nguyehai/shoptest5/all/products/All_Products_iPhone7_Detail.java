@@ -6,8 +6,6 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.nguyehai.shoptest5.R;
@@ -33,7 +31,7 @@ public class All_Products_iPhone7_Detail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_list);
+        setContentView(R.layout.activity_all_products);
         Intent intent = getIntent();
         value_from_All_Products_iPhone7 = intent.getStringExtra("Model"); //if it's a string you stored.
         _("value_from_All_Products_iPhone7"+value_from_All_Products_iPhone7);
@@ -47,11 +45,11 @@ public class All_Products_iPhone7_Detail extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            /*pDialog = new ProgressDialog(All_Products_iPhone7_Detail.this);
+            pDialog = new ProgressDialog(All_Products_iPhone7_Detail.this);
             pDialog.setMessage("Loading products. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
-            pDialog.show();*/
+            pDialog.show();
         }
 
         /**
@@ -71,7 +69,7 @@ public class All_Products_iPhone7_Detail extends AppCompatActivity {
          * **/
         protected void onPostExecute(String file_url) {
             // dismiss the dialog after getting all products
-          //  pDialog.dismiss();
+            pDialog.dismiss();
             // updating UI from Background Thread
             runOnUiThread(new Runnable() {
                 public void run() {

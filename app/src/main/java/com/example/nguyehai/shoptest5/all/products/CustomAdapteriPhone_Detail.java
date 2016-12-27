@@ -66,12 +66,15 @@ public class CustomAdapteriPhone_Detail extends BaseAdapter {
          TextView condition = (TextView) convertView.findViewById(R.id.condition);
          TextView description = (TextView) convertView.findViewById(R.id.description);
          TextView model = (TextView) convertView.findViewById(R.id.model);
+        TextView price = (TextView) convertView.findViewById(R.id.price);
+
         size.setText(m.name);
          color.setText(m.color);
          condition.setText(m.condition);
          size.setText(m.size);
          description.setText(m.description);
          model.setText(m.model);
+         price.setText(m.price);
 
          thumbNail.setImageUrl(m.imagelink, imageLoader);
 

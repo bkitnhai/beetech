@@ -22,7 +22,8 @@
                 android:text="Model"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/modelLabel" />
+                android:id="@+id/modelLabel"
+                android:textStyle="bold" />
 
             <TextView
                 android:text="iPhone4"
@@ -41,7 +42,8 @@
                 android:text="Size: "
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/sizeLabl" />
+                android:id="@+id/sizeLabl"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/size"
@@ -63,7 +65,8 @@
                 android:text="Color:"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/colorLabel" />
+                android:id="@+id/colorLabel"
+                android:textStyle="bold" />
 
             <TextView
                 android:text="black"
@@ -82,7 +85,8 @@
                 android:text="Condition:"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/condi" />
+                android:id="@+id/condi"
+                android:textStyle="bold" />
 
             <TextView
                 android:text="Condition"
@@ -101,15 +105,55 @@
 
             <TextView
                 android:text="Desctiption: "
-                android:layout_width="75dp"
+                android:layout_width="78dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView8" />
+                android:id="@+id/textView8"
+                android:textStyle="bold" />
 
             <TextView
-                android:text="Description"
+                android:text="3 years warranty"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/description" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/priceLay">
+
+            <TextView
+                android:text="Price: "
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="100kr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/description" />
+                android:id="@+id/price" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonLay">
+            <Button
+                android:id="@+id/btnAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@id/priceLay"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@id/ivUserIcon"
+                android:background="#64d048"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="Add To Cart"
+                android:textColor="@android:color/background_light" />
+                <!--android:textColor="@color/white" -->
+                />
         </LinearLayout>
 
     </LinearLayout>

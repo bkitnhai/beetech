@@ -28,7 +28,7 @@ public class All_Products_iPhone7 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_list);
+        setContentView(R.layout.activity_all_products);
         Intent intent = getIntent();
         value_from_All_Products = intent.getStringExtra("Name"); //if it's a string you stored.
         // Loading products in Background Thread
