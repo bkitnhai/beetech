@@ -1,5 +1,6 @@
 package com.example.nguyehai.shoptest5.all.products;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,8 @@ public class All_Products_iPhone7 extends AppCompatActivity {
     JSONParser jParser = new JSONParser();
     JSONArray json;
     String value_from_All_Products = null;
+
+    private ProgressDialog pDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,11 @@ public class All_Products_iPhone7 extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            pDialog = new ProgressDialog(All_Products_iPhone7.this);
+            pDialog.setMessage("Loading products. Please wait...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
 
         }
 
@@ -62,7 +70,7 @@ public class All_Products_iPhone7 extends AppCompatActivity {
          * **/
         protected void onPostExecute(String file_url) {
 
-
+            pDialog.dismiss();
             // updating UI from Background Thread
             runOnUiThread(new Runnable() {
                 public void run() {

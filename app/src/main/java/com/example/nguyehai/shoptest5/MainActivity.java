@@ -22,7 +22,7 @@ public class MainActivity extends TabActivity {
         TabHost.TabSpec Recents = tabHost.newTabSpec("Recents");
         // setting Title and Icon for the Tab
         Recents.setIndicator("Recents", getResources().getDrawable(R.drawable.testicon));
-        Intent RecentsIntent = new Intent(this, Recents.class);
+        Intent RecentsIntent = new Intent(this, com.example.nguyehai.shoptest5.recents.Recents.class);
         Recents.setContent(RecentsIntent);
 
         // Tab for Songs

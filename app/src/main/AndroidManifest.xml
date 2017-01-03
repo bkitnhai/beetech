@@ -9,7 +9,7 @@
     <application
         android:name=".all.products.backEndOfAllPhones.AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/beetech"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Recents" />
+        <activity android:name=".recents.Recents" />
         <activity
             android:name=".all.products.All_Products"
             android:label="@string/title_activity_songs" />

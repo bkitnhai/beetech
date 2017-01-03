@@ -1,5 +1,6 @@
 package com.example.nguyehai.shoptest5.all.products;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -24,7 +25,8 @@ public class All_Products extends AppCompatActivity {
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
     // products JSONArray
-    JSONArray products = null;
+
+    private ProgressDialog pDialog;
     JSONArray json;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,11 @@ public class All_Products extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            pDialog = new ProgressDialog(All_Products.this);
+            pDialog.setMessage("Loading products. Please wait...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
 
         }
 
@@ -106,7 +113,7 @@ public class All_Products extends AppCompatActivity {
          * **/
         protected void onPostExecute(String file_url) {
 
-
+            pDialog.dismiss();
             // updating UI from Background Thread
             runOnUiThread(new Runnable() {
                 public void run() {
